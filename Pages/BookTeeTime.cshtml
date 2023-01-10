@@ -1,0 +1,191 @@
+﻿@page
+@model ClubBAISTsystem.Pages.BookTeeTimeModel
+@{
+}
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+@*<script type="text/javascript">
+        $(function () {
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0 so need to add 1 to make it 1!
+            var yyyy = today.getFullYear();
+            if (dd < 10) {
+                dd = '0' + dd
+            }
+            if (mm < 10) {
+                mm = '0' + mm
+            }
+
+            today = yyyy + '-' + mm + '-' + dd;
+            document.getElementById("datefield").setAttribute("min", today);
+        });
+
+
+    </script>*@
+
+
+<h1>Book Tee Time</h1>
+
+<h5> Find Available Tee Time</h5>
+<div>
+    <b>@Model.Message</b>
+</div>
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Date">Date:</label>
+        <input asp-for="Date" class="form-control" type="date" min="@DateTime.UtcNow.Date.ToString("yyyy-MM-dd")" max="@DateTime.UtcNow.Date.AddDays(7).ToString("yyyy-MM-dd")" value="@Model.Date" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Time">Time</label>
+        <select asp-for="Time" asp-items="Model.TimeLists" class="form=control" value="@Model.Time">
+        </select>
+    </div>
+    <div class="form-group">
+        <button type="submit" asp-page-handler="Search">Search</button>
+    </div>
+
+
+
+
+</form>
+
+@if (Model.AvailableTeeTime == null)
+{
+    @*<form method="post">
+    </form>*@
+
+
+
+
+
+
+
+    <h3>Book Tee Time Reservation</h3>
+    <b> @Model.Message2</b>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+        </div>
+        @*<div class="form-group">
+                <label asp-for="MembershipLevel">MembershipLevel:</label>
+                <input asp-for="MembershipLevel" class="form-control" readonly />
+            </div>*@
+        @*<div class="form-group">
+                <label asp-for="ConfirmationNumber">Confirmation Number:</label>
+                <input asp-for="ConfirmationNumber" class="form-control" value="@Model.ConfirmationNumber" readonly />
+
+            </div>*@
+        <div class="form-group">
+            <label asp-for="AvailableTeeTime.Date">Date:</label>
+            <input asp-for="AvailableTeeTime.Date" type="date" class="form-control" min="@DateTime.UtcNow.Date.ToString("yyyy-MM-dd")" max="@DateTime.UtcNow.Date.AddDays(7).ToString("yyyy-MM-dd")" value="@Model.Date" readonly />
+            <span asp-validation-for="AvailableTeeTime.Date" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="AvailableTeeTime.Time">Tee Time:</label>
+            <input asp-for="AvailableTeeTime.Time" type="datetime" class="form-control"  value="@Model.Time" readonly />
+            <span asp-validation-for="AvailableTeeTime.Time" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AvailableTeeTime.LastName">Last Name:</label>
+            <input asp-for="AvailableTeeTime.LastName" class="form-control" value="@Model.LastName" />
+            <span asp-validation-for="AvailableTeeTime.LastName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AvailableTeeTime.FirstName">First Name:</label>
+            <input asp-for="AvailableTeeTime.FirstName" class="form-control" value="@Model.FirstName" />
+            <span asp-validation-for="AvailableTeeTime.FirstName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AvailableTeeTime.HomePhone">Phone:</label>
+            <input asp-for="AvailableTeeTime.HomePhone" class="form-control" value="@Model.HomePhone" />
+            <span asp-validation-for="AvailableTeeTime.HomePhone" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AvailableTeeTime.AlternatePhone">Alternate Phone:</label>
+            <input asp-for="AvailableTeeTime.AlternatePhone" class="form-control" value="@Model.AlternatePhone" />
+            <span asp-validation-for="AvailableTeeTime.AlternatePhone" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AvailableTeeTime.NumberOfPlayers">Number Of Players:</label>
+            <input asp-for="AvailableTeeTime.NumberOfPlayers" class="form-control"
+                   min="1" max="4" value="@Model.NumberOfPlayers" />
+            <medium>Max 4 Players</medium>
+            <span asp-validation-for="AvailableTeeTime.NumberOfPlayers" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AvailableTeeTime.NumberOfCarts">Number Of Carts:</label>
+            <input asp-for="AvailableTeeTime.NumberOfCarts" class="form-control"
+                   min="1" max="4" value="@Model.NumberOfCarts" />
+            <medium>Max 4 Carts</medium>
+            <span asp-validation-for="AvailableTeeTime.NumberOfCarts" class="text-danger"></span>
+        </div>
+
+
+        <button type="submit" asp-page-handler="Submit">Book Tee Time</button>
+    </form>
+
+}
+else
+{
+    <div class="form-group">
+        <table class="table table-bordered table-striped">
+
+            <tr>
+                <td>Confirmation Number</td>
+                <td>Date</td>
+                <td>Tee Time</td>
+                <td>Last Name</td>
+                <td>First Name</td>
+                <td>Number Of Players</td>
+                <td>Phone Number</td>
+                <td>Alternative Phone Number</td>
+                <td>Number Of Carts</td>
+                <td>Employee Name</td>
+            </tr>
+
+
+            <tr>
+
+
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.ConfirmationNumber)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.Date)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.Time)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.LastName)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.FirstName)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.NumberOfPlayers)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.HomePhone)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.AlternatePhone)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.NumberOfCarts)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.EmployeeName)</td>
+            </tr>
+
+
+        </table>
+    </div>
+}
+
+
+
+@*@else(User.IsInRole("Clerk") || User.IsInRole("ProShop"))
+            {
+    <div class="form-group">
+        <label asp-for="AvailableTeeTime.EmployeeName">Employee Name:</label>
+        <input asp-for="AvailableTeeTime.EmployeeName" class="form-control" value="@Model.EmployeeName" />
+        <span asp-validation-for="AvailableTeeTime.EmployeeName" class="text-danger"></span>
+    </div>
+            }*@
+
+
+
+
+
+

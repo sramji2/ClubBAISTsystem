@@ -1,0 +1,74 @@
+﻿@page
+@model ClubBAISTsystem.Pages.EmployeeLoginModel
+@{
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+
+<h1>Employee Login Page</h1>
+<div>
+    @Model.Message
+</div>
+
+<form name="EmployeeLoginForm" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger">
+    </div>
+    <div class="form-group">
+        <label asp-for="EmployeeNumber">Employee Number:</label>
+        <input asp-for="EmployeeNumber" class="form-control" />
+        <span asp-validation-for="EmployeeNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password">Password:</label>
+        <input asp-for="Password" class="form-control" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" asp-page-handler="Search">Login</button>
+        
+    </div>
+
+</form>
+
+<table>
+    <tr>
+        <th>Employee Number &nbsp; &nbsp; &nbsp; &nbsp;</th>
+
+        <th>Employee Name &nbsp; &nbsp; &nbsp; &nbsp;</th>
+        <th>Email &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+        <th>Password &nbsp; &nbsp; &nbsp; &nbsp;</th>
+        <th>Role</th>
+    </tr>
+    <tr>
+        <th>10220416</th>
+        <th>Daniel Freeman</th>
+        <th>daniel.freeman@clubbaist.ca&nbsp; &nbsp; &nbsp; &nbsp;</th>
+        <th>Test2022**</th>
+        <th>MembershipCommittee</th>
+    </tr>
+    <tr>
+        <th>10220415</th>
+        <th>Keegan Lowe</th>
+        <th>keegan.lowe@clubbaist.ca&nbsp; &nbsp; &nbsp; &nbsp;</th>
+        <th>Test2022!$</th>
+        <th>ProShop</th>
+    </tr>
+    <tr>
+        <th>10220414</th>
+        <th>Lacy Evans</th>
+        <th>lacy.evans@clubbaist.ca&nbsp; &nbsp; &nbsp; &nbsp;</th>
+        <th>Test2022!&</th>
+        <th>Clerk</th>
+    </tr>
+    <tr>
+        <th>10220413</th>
+        <th>Victoria Lambert</th>
+        <th>victoria.lambert@clubbaist.ca&nbsp; &nbsp; &nbsp; &nbsp;</th>
+        <th>Test2022^</th>
+        <th>RuleCommittee</th>
+    </tr>
+</table>

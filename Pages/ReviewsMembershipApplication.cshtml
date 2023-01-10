@@ -1,0 +1,192 @@
+﻿@page
+@model ClubBAISTsystem.Pages.ReviewsMembershipApplicationModel
+@{
+}
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+
+
+
+
+<div class="alert alert-info">
+    @Model.Message
+</div>
+
+<h1>Review Member Application</h1>
+<form method="post">
+
+    <div class="form-group">
+        <label asp-for="ApplicationStatus">Application Status:</label>
+        <select asp-for="ApplicationStatus" asp-items="Model.Status" class="form-control" >
+            <option value="">Select Application Status</option>
+
+        </select>
+    </div>
+    <button type="submit" asp-page-handler="Search" >Search</button>
+</form>
+
+@if (Model.ApplicationID > 0)
+{
+
+    <h3>Update Membership Application</h3>
+    <form method="post">
+        <table class="table table-bordered table-striped">
+
+            <tr>
+                <td>
+                    <label asp-for="ApplicationID">Application ID</label>
+                    <input asp-for="ApplicationID" class="form-control" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="LastName">Last Name</label>
+                    <input asp-for="LastName" class="form-control" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>First Name</label>
+                    <input value="@Model.FirstName" class="form-control" id="firstname" disabled>
+                </td>
+            <tr>
+                <td>
+
+
+                    <label>Home Address</label>
+                    <input value="@Model.HomeAddress" class="form-control" id="homeaddress" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+
+                    <label>Home City</label>
+                    <input value="@Model.HomeCity" class="form-control" id="homecity" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+
+                    <label>Home Province</label>
+                    <input value="@Model.HomeProvince" class="form-control" id="homeprovince" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Home Postal Code</label>
+                    <input value="@Model.HomePostalCode" class="form-control" id="homePostalCode" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Home Phone</label>
+                    <input value="@Model.HomePhone" class="form-control" id="homePhone" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Alternate Phone</label>
+                    <input value="@Model.AlternatePhone" class="form-control" id="alternatePhone" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Email</label>
+                    <input value="@Model.Email" class="form-control" id="email" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Date Of Birth</label>
+                    <input value="@Model.DateOfBirth" class="form-control" id="dateOfBirth" disabled>
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <label>Occupation</label>
+                    <input value="@Model.Occupation" class="form-control" id="occupation" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Company Name</label>
+                    <input value="@Model.CompanyName" class="form-control" id="companyName" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Company Address</label>
+                    <input value="@Model.CompanyAddress" class="form-control" id="companyAddress" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+
+                    <label>Company City</label>
+                    <input value="@Model.CompanyCity" class="form-control" id="companycity" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+
+                    <label>Company Province</label>
+                    <input value="@Model.CompanyProvince" class="form-control" id="companyprovince" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Company Postal Code</label>
+                    <input value="@Model.CompanyPostalCode" class="form-control" id="companyPostalCode" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Company Phone</label>
+                    <input value="@Model.CompanyPhone" class="form-control" id="companyPhone" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Date</label>
+                    <input value="@Model.Date" class="form-control" type="date" id="date" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Shareholder Name 1</label>
+                    <input value="@Model.ShareholderName1" class="form-control" id="shareholderName1" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Shareholder Name 2</label>
+                    <input value="@Model.ShareholderName2" class="form-control" id="shareholderName2" disabled>
+                </td>
+            </tr>
+        </table>
+
+        <div class="form-group">
+            <label asp-for="ApplicationStatus">Application Status:</label>
+            <input asp-for="ApplicationStatus" class="form-control" placeholder="Enter Application Status" />
+
+        </div>
+        <div class="form-group">
+            <label asp-for="MembershipLevel">Membership Level:</label>
+            <input asp-for="MembershipLevel" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label asp-for="ApprovedBy">Approved By:</label>
+            <input asp-for="ApprovedBy" class="form-control" />
+
+        </div>
+        <button type="submit" asp-page-handler="Update" >Update Membership Application</button>
+    </form>
+}

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMWuEdspQfkuySEkITI3mKgAAAAACAAAAAAAQZgAAAAEAACAAAAD9r+y/4Zx8pMWrQGjAPGUzKoruP9miPrqTrokcgI3gTAAAAAAOgAAAAAIAACAAAACBULJz226hDx4dshQ9ti3hWo1vVBHY/zlQlp+7ce72NTAAAAA842RGp5eWuW7Kp0h7JkfLSCnPh7yZ8lpD8Z6DyUrbyD8h36HYikaASaLUPuyyqnhAAAAAUixUURWF8gd7xqHzocnteOrBaoKWwaVaRvu3FNSuJmGTGlVwPAQhqebsAUVOabTMDFeUzs085BRk598BO1BoGg==</EncryptedPassword>
+    <_PublishTargetUrl>ftps://dev1.baist.ca/Students/sramji2</_PublishTargetUrl>
+    <History>True|2022-04-22T17:11:31.7865210Z;True|2022-04-22T10:22:34.5118136-06:00;True|2022-04-22T09:20:09.3939201-06:00;False|2022-04-22T09:19:44.9895943-06:00;True|2022-04-22T09:02:10.8284857-06:00;False|2022-04-22T09:01:50.6552930-06:00;True|2022-04-22T08:26:27.6179406-06:00;True|2022-04-21T23:21:15.3880189-06:00;True|2022-04-21T20:25:32.8646636-06:00;True|2022-04-20T20:14:46.9022724-06:00;True|2022-04-20T13:14:27.4851003-06:00;True|2022-04-19T20:58:12.7295573-06:00;True|2022-04-19T09:42:03.6979962-06:00;False|2022-04-19T09:41:41.7681391-06:00;True|2022-04-18T22:10:41.0153876-06:00;True|2022-03-20T20:33:10.8625894-06:00;False|2022-03-20T20:32:57.2568808-06:00;True|2022-03-20T20:32:01.6004482-06:00;False|2022-03-20T20:31:46.4836619-06:00;True|2022-03-20T20:29:51.4050731-06:00;False|2022-03-20T20:29:31.3350884-06:00;True|2022-03-20T20:17:37.2222040-06:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>04/15/2022 15:52:37</publishTime>
+    </File>
+    <File Include="Azure.Core.dll">
+      <publishTime>10/28/2020 15:37:16</publishTime>
+    </File>
+    <File Include="Azure.Identity.dll">
+      <publishTime>11/12/2020 22:31:54</publishTime>
+    </File>
+    <File Include="ClubBAISTsystem.deps.json">
+      <publishTime>04/22/2022 11:11:19</publishTime>
+    </File>
+    <File Include="ClubBAISTsystem.dll">
+      <publishTime>04/22/2022 11:11:18</publishTime>
+    </File>
+    <File Include="ClubBAISTsystem.exe">
+      <publishTime>04/22/2022 11:11:18</publishTime>
+    </File>
+    <File Include="ClubBAISTsystem.pdb">
+      <publishTime>04/22/2022 11:11:18</publishTime>
+    </File>
+    <File Include="ClubBAISTsystem.runtimeconfig.json">
+      <publishTime>04/18/2022 22:09:55</publishTime>
+    </File>
+    <File Include="ClubBAISTsystem.Views.dll">
+      <publishTime>04/22/2022 11:11:19</publishTime>
+    </File>
+    <File Include="ClubBAISTsystem.Views.pdb">
+      <publishTime>04/22/2022 11:11:19</publishTime>
+    </File>
+    <File Include="cs/Microsoft.VisualStudio.Threading.resources.dll">
+      <publishTime>08/21/2017 02:08:42</publishTime>
+    </File>
+    <File Include="cs/Microsoft.VisualStudio.Validation.resources.dll">
+      <publishTime>05/02/2017 12:15:32</publishTime>
+    </File>
+    <File Include="de/Microsoft.VisualStudio.Threading.resources.dll">
+      <publishTime>08/21/2017 02:08:42</publishTime>
+    </File>
+    <File Include="de/Microsoft.VisualStudio.Validation.resources.dll">
+      <publishTime>05/02/2017 12:15:32</publishTime>
+    </File>
+    <File Include="es/Microsoft.VisualStudio.Threading.resources.dll">
+      <publishTime>08/21/2017 02:08:42</publishTime>
+    </File>
+    <File Include="es/Microsoft.VisualStudio.Validation.resources.dll">
+      <publishTime>05/02/2017 12:15:32</publishTime>
+    </File>
+    <File Include="fr/Microsoft.VisualStudio.Threading.resources.dll">
+      <publishTime>08/21/2017 02:08:42</publishTime>
+    </File>
+    <File Include="fr/Microsoft.VisualStudio.Validation.resources.dll">
+      <publishTime>05/02/2017 12:15:32</publishTime>
+    </File>
+    <File Include="it/Microsoft.VisualStudio.Threading.resources.dll">
+      <publishTime>08/21/2017 02:08:42</publishTime>
+    </File>
+    <File Include="it/Microsoft.VisualStudio.Validation.resources.dll">
+      <publishTime>05/02/2017 12:15:32</publishTime>
+    </File>
+    <File Include="ja/Microsoft.VisualStudio.Threading.resources.dll">
+      <publishTime>08/21/2017 02:08:42</publishTime>
+    </File>
+    <File Include="ja/Microsoft.VisualStudio.Validation.resources.dll">
+      <publishTime>05/02/2017 12:15:32</publishTime>
+    </File>
+    <File Include="ko/Microsoft.VisualStudio.Threading.resources.dll">
+      <publishTime>08/21/2017 02:08:42</publishTime>
+    </File>
+    <File Include="ko/Microsoft.VisualStudio.Validation.resources.dll">
+      <publishTime>05/02/2017 12:15:32</publishTime>
+    </File>
+    <File Include="Microsoft.Bcl.AsyncInterfaces.dll">
+      <publishTime>09/12/2019 20:28:44</publishTime>
+    </File>
+    <File Include="Microsoft.Data.SqlClient.dll">
+      <publishTime>01/31/2022 15:34:26</publishTime>
+    </File>
+    <File Include="Microsoft.Identity.Client.dll">
+      <publishTime>10/22/2020 11:46:26</publishTime>
+    </File>
+    <File Include="Microsoft.Identity.Client.Extensions.Msal.dll">
+      <publishTime>10/29/2020 09:40:20</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.JsonWebTokens.dll">
+      <publishTime>10/12/2020 18:21:34</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Logging.dll">
+      <publishTime>10/12/2020 18:23:12</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Protocols.dll">
+      <publishTime>10/12/2020 18:25:30</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Protocols.OpenIdConnect.dll">
+      <publishTime>10/12/2020 18:31:32</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Tokens.dll">
+      <publishTime>10/12/2020 18:27:48</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.CoreUtility.dll">
+      <publishTime>02/13/2018 16:24:00</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Editor.dll">
+      <publishTime>02/13/2018 16:24:00</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.LiveShare.dll">
+      <publishTime>07/23/2019 10:46:04</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.LiveShare.LanguageServices.16.3.dll">
+      <publishTime>07/23/2019 10:48:40</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.OLE.Interop.dll">
+      <publishTime>09/15/2017 03:36:54</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Shell.Interop.dll">
+      <publishTime>11/30/2017 13:36:18</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Text.Data.dll">
+      <publishTime>02/13/2018 16:24:02</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Text.Logic.dll">
+      <publishTime>02/13/2018 16:24:02</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Text.UI.dll">
+      <publishTime>02/13/2018 16:24:02</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Text.UI.Wpf.dll">
+      <publishTime>02/13/2018 16:24:02</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.TextManager.Interop.8.0.dll">
+      <publishTime>11/30/2017 13:36:20</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.TextManager.Interop.dll">
+      <publishTime>11/30/2017 13:36:18</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Threading.dll">
+      <publishTime>08/21/2017 02:08:42</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Validation.dll">
+      <publishTime>05/02/2017 12:15:32</publishTime>
+    </File>
+    <File Include="Newtonsoft.Json.dll">
+      <publishTime>06/13/2016 17:06:14</publishTime>
+    </File>
+    <File Include="pl/Microsoft.VisualStudio.Threading.resources.dll">
+      <publishTime>08/21/2017 02:08:42</publishTime>
+    </File>
+    <File Include="pl/Microsoft.VisualStudio.Validation.resources.dll">
+      <publishTime>05/02/2017 12:15:32</publishTime>
+    </File>
+    <File Include="pt-BR/Microsoft.VisualStudio.Threading.resources.dll">
+      <publishTime>08/21/2017 02:08:42</publishTime>
+    </File>
+    <File Include="pt-BR/Microsoft.VisualStudio.Validation.resources.dll">
+      <publishTime>05/02/2017 12:15:32</publishTime>
+    </File>
+    <File Include="ru/Microsoft.VisualStudio.Threading.resources.dll">
+      <publishTime>08/21/2017 02:08:42</publishTime>
+    </File>
+    <File Include="ru/Microsoft.VisualStudio.Validation.resources.dll">
+      <publishTime>05/02/2017 12:15:32</publishTime>
+    </File>
+    <File Include="runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll">
+      <publishTime>01/31/2022 15:34:26</publishTime>
+    </File>
+    <File Include="runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll">
+      <publishTime>11/17/2021 09:43:48</publishTime>
+    </File>
+    <File Include="runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll">
+      <publishTime>11/17/2021 09:43:48</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll">
+      <publishTime>11/17/2021 09:43:48</publishTime>
+    </File>
+    <File Include="runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll">
+      <publishTime>11/17/2021 09:43:48</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll">
+      <publishTime>01/31/2022 15:34:26</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll">
+      <publishTime>10/19/2020 12:52:44</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>10/19/2020 12:49:30</publishTime>
+    </File>
+    <File Include="System.Composition.AttributedModel.dll">
+      <publishTime>07/19/2017 04:01:30</publishTime>
+    </File>
+    <File Include="System.Composition.Convention.dll">
+      <publishTime>07/19/2017 04:01:28</publishTime>
+    </File>
+    <File Include="System.Composition.Hosting.dll">
+      <publishTime>07/19/2017 04:01:28</publishTime>
+    </File>
+    <File Include="System.Composition.Runtime.dll">
+      <publishTime>07/19/2017 04:01:28</publishTime>
+    </File>
+    <File Include="System.Composition.TypedParts.dll">
+      <publishTime>07/19/2017 04:01:34</publishTime>
+    </File>
+    <File Include="System.Configuration.ConfigurationManager.dll">
+      <publishTime>10/19/2020 12:52:30</publishTime>
+    </File>
+    <File Include="System.IdentityModel.Tokens.Jwt.dll">
+      <publishTime>10/12/2020 18:20:12</publishTime>
+    </File>
+    <File Include="System.Runtime.Caching.dll">
+      <publishTime>10/19/2020 12:52:34</publishTime>
+    </File>
+    <File Include="System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>10/19/2020 12:52:26</publishTime>
+    </File>
+    <File Include="tr/Microsoft.VisualStudio.Threading.resources.dll">
+      <publishTime>08/21/2017 02:08:42</publishTime>
+    </File>
+    <File Include="tr/Microsoft.VisualStudio.Validation.resources.dll">
+      <publishTime>05/02/2017 12:15:32</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>04/22/2022 11:11:21</publishTime>
+    </File>
+    <File Include="wwwroot/css/site.css">
+      <publishTime>04/19/2022 09:57:11</publishTime>
+    </File>
+    <File Include="wwwroot/favicon.ico">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/js/site.js">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css.map">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.js">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.js.map">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/LICENSE">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.js">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.min.js">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.js">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.min.js">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/LICENSE.md">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.js">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.min.js">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.min.map">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/LICENSE.txt">
+      <publishTime>03/08/2022 19:15:09</publishTime>
+    </File>
+    <File Include="zh-Hans/Microsoft.VisualStudio.Threading.resources.dll">
+      <publishTime>08/21/2017 02:08:42</publishTime>
+    </File>
+    <File Include="zh-Hans/Microsoft.VisualStudio.Validation.resources.dll">
+      <publishTime>05/02/2017 12:15:32</publishTime>
+    </File>
+    <File Include="zh-Hant/Microsoft.VisualStudio.Threading.resources.dll">
+      <publishTime>08/21/2017 02:08:42</publishTime>
+    </File>
+    <File Include="zh-Hant/Microsoft.VisualStudio.Validation.resources.dll">
+      <publishTime>05/02/2017 12:15:32</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

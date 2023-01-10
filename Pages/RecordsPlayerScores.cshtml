@@ -1,0 +1,433 @@
+﻿@page
+@model ClubBAISTsystem.Pages.RecordsPlayerScoresModel
+@{
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<div class="alert alert-info">
+
+    @Model.Message
+    @Model.Message2
+</div>
+
+<h1>Find Member</h1>
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger">
+        </div>
+    <div class="form-group">
+        <label asp-for="Email">Email Address:</label>
+        <input asp-for="Email" class="form-control"  />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <button type="submit" asp-page-handler="Search">Search</button>
+    <table>
+        <tr>
+            <th>Email &nbsp; &nbsp; &nbsp; &nbsp;</th>
+           
+        </tr>
+        <tr>
+            <th>kev.smith@yahoo.com</th>
+            
+        </tr>
+     </table>
+</form>
+@if (Model.activePlayer != null)
+{
+<form method="post">
+    @*<div asp-validation-summary="ModelOnly" class="text-danger">
+    </div>*@
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Member Number</th>
+            <th>Membership Level</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Phone</th>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(modelMember => Model.MemberNumber)</td>
+            <td>@Html.DisplayFor(modelMember => Model.MembershipLevel)</td>
+            <td>@Html.DisplayFor(modelMember => Model.LastName)</td>
+            <td>@Html.DisplayFor(modelMember => Model.FirstName)</td>
+            <td>@Html.DisplayFor(modelMember => Model.Phone)</td>
+        </tr>
+    </table>
+
+    <h2>Player Scores</h2>
+   
+    <table class="table table-bordered table-striped">
+             <tr>
+                <td>
+                    <label asp-for="Date">Date:</label>
+                    <input asp-for="Date" type="date" min="@DateTime.UtcNow.Date.ToString("yyyy-MM-dd")" value="@Model.Date" class="form-control"/>
+                    <span asp-validation-for="Date"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="GolfCourse">Golf Course:</label>
+                    <input asp-for="GolfCourse" value="@Model.GolfCourse" class="form-control" />
+                    <span asp-validation-for="GolfCourse"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="CourseRating">Course Rating:</label>
+                    <input asp-for="CourseRating" type="number" value="@Model.CourseRating" class="form-control" />
+                    <span asp-validation-for="CourseRating"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="SlopeRating">Slop Rating:</label>
+                    <input asp-for="SlopeRating" type="number" value="@Model.SlopeRating" class="form-control" />
+                    <span asp-validation-for="SlopeRating"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="PCCAdjustment">PCC Adjustment:</label>
+                    <input asp-for="PCCAdjustment" type="number" value="@Model.PCCAdjustment" class="form-control" />
+                    <span asp-validation-for="PCCAdjustment"></span>
+                </td>
+            </tr>
+
+        </table>
+
+        <h3>Scorecard:</h3>
+
+        <table class="table table-bordered table-striped">
+
+            <thead>
+                <tr>
+                    <th><b>Hole</b></th>
+                    <th><b>1</b></th>
+                    <th><b>2</b></th>
+                    <th><b>3</b></th>
+                    <th><b>4</b></th>
+                    <th><b>5</b></th>
+                    <th><b>6</b></th>
+                    <th><b>7</b></th>
+                    <th><b>8</b></th>
+                    <th><b>9</b></th>
+                    <th><b>Out</b></th>
+                </tr>
+
+            </thead>
+
+            <tfoot>
+                <tr>
+                    <th><b>Hole</b></th>
+                    <th><b>10</b></th>
+                    <th><b>11</b></th>
+                    <th><b>12</b></th>
+                    <th><b>13</b></th>
+                    <th><b>14</b></th>
+                    <th><b>15</b></th>
+                    <th><b>16</b></th>
+                    <th><b>17</b></th>
+                    <th><b>18</b></th>
+                    <th><b>In</b></th>
+                    <th><b>Total</b></th>
+                </tr>
+            </tfoot>
+
+            <tbody>
+                <tr>
+                    <th><b>Par</b></th>
+                    <th><b>4</b></th>
+                    <th><b>5</b></th>
+                    <th><b>3</b></th>
+                    <th><b>4</b></th>
+                    <th><b>4</b></th>
+                    <th><b>4</b></th>
+                    <th><b>3/4</b></th>
+                    <th><b>5</b></th>
+                    <th><b>4</b></th>
+                    <th><b>36/37</b></th>
+                </tr>
+                <tr>
+                    <th><b>Red</b></th>
+                    <th><b>371</b></th>
+                    <th><b>438</b></th>
+                    <th><b>96</b></th>
+                    <th><b>226</b></th>
+                    <th><b>346</b></th>
+                    <th><b>317</b></th>
+                    <th><b>250</b></th>
+                    <th><b>436</b></th>
+                    <th><b>311</b></th>
+                    <th><b>2791</b></th>
+                </tr>
+                <tr>
+                    <th><b>White</b></th>
+                    <th><b>417</b></th>
+                    <th><b>492</b></th>
+                    <th><b>117</b></th>
+                    <th><b>288</b></th>
+                    <th><b>363</b></th>
+                    <th><b>369</b></th>
+                    <th><b>182</b></th>
+                    <th><b>492</b></th>
+                    <th><b>335</b></th>
+                    <th><b>3055</b></th>
+                </tr>
+                <tr>
+                    <th><b>Blue</b></th>
+                    <th><b>430</b></th>
+                    <th><b>505</b></th>
+                    <th><b>144</b></th>
+                    <th><b>288</b></th>
+                    <th><b>380</b></th>
+                    <th><b>395</b></th>
+                    <th><b>235</b></th>
+                    <th><b>530</b></th>
+                    <th><b>361</b></th>
+                    <th><b>3268</b></th>
+                </tr>
+                <tr>
+                    <th><b>Stroke Index Men</b></th>
+                    <th><b>1</b></th>
+                    <th><b>5</b></th>
+                    <th><b>17</b></th>
+                    <th><b>11</b></th>
+                    <th><b>9</b></th>
+                    <th><b>7</b></th>
+                    <th><b>15</b></th>
+                    <th><b>3</b></th>
+                    <th><b>13</b></th>
+                    <th><b></b></th>
+                </tr>
+                <tr>
+                    <th><b>Stroke Index Women</b></th>
+                    <th><b>5</b></th>
+                    <th><b>1</b></th>
+                    <th><b>17</b></th>
+                    <th><b>13</b></th>
+                    <th><b>11</b></th>
+                    <th><b>7</b></th>
+                    <th><b>15</b></th>
+                    <th><b>3</b></th>
+                    <th><b>9</b></th>
+                    <th><b></b></th>
+                </tr>
+
+                <tr>
+                    <th><b>Enter Score:</b></th>
+
+                    <td>
+                        <input asp-for="Hole1" type="number" class="form-control" />
+                        <span asp-validation-for="Hole1"></span>
+                    </td>
+                    <td>
+                        <input asp-for="Hole2" type="number" class="form-control" />
+                        <span asp-validation-for="Hole2"></span>
+                    </td>
+                    <td>
+                        <input asp-for="Hole3" type="number" class="form-control" />
+                        <span asp-validation-for="Hole3"></span>
+                    </td>
+                    <td>
+                        <input asp-for="Hole4" type="number" class="form-control" />
+                        <span asp-validation-for="Hole4"></span>
+                    </td>
+                    <td>
+                        <input asp-for="Hole5" type="number" class="form-control" />
+                        <span asp-validation-for="Hole5"></span>
+                    </td>
+                    <td>
+                        <input asp-for="Hole6" type="number" class="form-control" />
+                        <span asp-validation-for="Hole6"></span>
+                    </td>
+                    <td>
+                        <input asp-for="Hole7" type="number" class="form-control" />
+                        <span asp-validation-for="Hole7"></span>
+                    </td>
+                    <td>
+                        <input asp-for="Hole8" type="number" class="form-control" />
+                        <span asp-validation-for="Hole8"></span>
+                    </td>
+                    <td>
+                        <input asp-for="Hole9" type="number" class="form-control" />
+                        <span asp-validation-for="Hole9"></span>
+                    </td>
+        </table>
+
+        <table class="table table-bordered table-striped">
+
+            <thead>
+                <tr>
+                    <th><b>Par</b></th>
+                    <th><b>4</b></th>
+                    <th><b>4</b></th>
+                    <th><b>3</b></th>
+                    <th><b>5</b></th>
+                    <th><b>4</b></th>
+                    <th><b>4</b></th>
+                    <th><b>3</b></th>
+                    <th><b>4/5</b></th>
+                    <th><b>4</b></th>
+                    <th><b>35/36</b></th>
+                    <th><b>71/73</b></th>
+                </tr>
+                <tr>
+                    <th><b>Red</b></th>
+                    <th><b>339</b></th>
+                    <th><b>323</b></th>
+                    <th><b>165</b></th>
+                    <th><b>434</b></th>
+                    <th><b>343</b></th>
+                    <th><b>268</b></th>
+                    <th><b>97</b></th>
+                    <th><b>393</b></th>
+                    <th><b>305</b></th>
+                    <th><b>2667</b></th>
+                    <th><b>5458</b></th>
+                </tr>
+                <tr>
+                    <th><b>White</b></th>
+                    <th><b>349</b></th>
+                    <th><b>356</b></th>
+                    <th><b>197</b></th>
+                    <th><b>491</b></th>
+                    <th><b>390</b></th>
+                    <th><b>323</b></th>
+                    <th><b>132</b></th>
+                    <th><b>408</b></th>
+                    <th><b>365</b></th>
+                    <th><b>3011</b></th>
+                    <th><b>6066</b></th>
+                </tr>
+                <tr>
+                    <th><b>Blue</b></th>
+                    <th><b>378</b></th>
+                    <th><b>382</b></th>
+                    <th><b>214</b></th>
+                    <th><b>511</b></th>
+                    <th><b>402</b></th>
+                    <th><b>345</b></th>
+                    <th><b>138</b></th>
+                    <th><b>423</b></th>
+                    <th><b>381</b></th>
+                    <th><b>3174</b></th>
+                    <th><b>6442</b></th>
+                </tr>
+                <tr>
+                    <th><b>Stroke Index Men</b></th>
+                    <th><b>12</b></th>
+                    <th><b>6</b></th>
+                    <th><b>16</b></th>
+                    <th><b>2</b></th>
+                    <th><b>10</b></th>
+                    <th><b>14</b></th>
+                    <th><b>18</b></th>
+                    <th><b>4</b></th>
+                    <th><b>8</b></th>
+                    <th><b></b></th>
+                </tr>
+                <tr>
+                    <th><b>Stroke Index Women</b></th>
+                    <th><b>8</b></th>
+                    <th><b>14</b></th>
+                    <th><b>16</b></th>
+                    <th><b>2</b></th>
+                    <th><b>6</b></th>
+                    <th><b>12</b></th>
+                    <th><b>18</b></th>
+                    <th><b>4</b></th>
+                    <th><b>10</b></th>
+                    <th><b></b></th>
+                </tr>
+            </thead>
+            <tr>
+                <th><b>Enter Score:</b></th>
+                <td>
+                    <input asp-for="Hole10" type="number" class="form-control" />
+                    <span asp-validation-for="Hole10"></span>
+                </td>
+                <td>
+                    <input asp-for="Hole11" type="number" class="form-control" />
+                    <span asp-validation-for="Hole11"></span>
+                </td>
+                <td>
+                    <input asp-for="Hole12" type="number" class="form-control" />
+                    <span asp-validation-for="Hole12"></span>
+                </td>
+                <td>
+                    <input asp-for="Hole13" type="number" class="form-control" />
+                    <span asp-validation-for="Hole13"></span>
+                </td>
+                <td>
+                    <input asp-for="Hole14" type="number" class="form-control" />
+                    <span asp-validation-for="Hole14"></span>
+                </td>
+                <td>
+                    <input asp-for="Hole15" type="number" class="form-control" />
+                    <span asp-validation-for="Hole15"></span>
+                </td>
+                <td>
+                    <input asp-for="Hole16" type="number" class="form-control" />
+                    <span asp-validation-for="Hole16"></span>
+                </td>
+                <td>
+                    <input asp-for="Hole17" type="number" class="form-control" />
+                    <span asp-validation-for="Hole17"></span>
+                </td>
+                <td>
+                    <input asp-for="Hole18" type="number" class="form-control" />
+                    <span asp-validation-for="Hole18"></span>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td><button type="submit" asp-page-handler="Calculate">Calculate</button></td>
+            </tr>
+        </table>
+
+        @*<h3>Ratings:</h3>
+
+        <table class="table table-bordered table-striped">
+
+            <thead>
+                <tr>
+                    <th>Member Number</th>
+                    <th>Adjusted Gross Score</th>
+                    <th>Score Differential</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+
+                    <td>
+                        <input asp-for="MemberNumber" type="number" value="@Model.MemberNumber" class="form-control" />
+                        <span asp-validation-for="MemberNumber"></span>
+                    </td>
+
+
+                    <td>
+                        <input asp-for="AdjustedGrossScore" type="number" value="@Model.newGolfGame.AdjustedGrossScore" class="form-control" />
+                        <span asp-validation-for="AdjustedGrossScore"></span>
+                    </td>
+                    <td>
+                        <input asp-for="ScoreDifferential" type="number" value="@Model.newGolfGame.ScoreDifferential" class="form-control" />
+                        <span asp-validation-for="ScoreDifferential"></span>
+                    </td>
+
+                </tr>
+            </tbody>
+
+        </table>*@
+        @*<table>
+            <tbody>
+                <tr>
+                    <td><button type="submit" asp-page-handler="Submit">Submit</button></td>
+                </tr>
+            </tbody>
+        </table>*@
+</form>
+}
+

@@ -1,0 +1,95 @@
+﻿@page
+@model ClubBAISTsystem.Pages.ModifyTeeTimeModel
+@{
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<div class="alert alert-info">
+    @Model.Message
+</div>
+<h1>Find Tee Time</h1>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger">
+    </div>
+    <div class="form-group">
+        <label asp-for="Date">Date:</label>
+        <input asp-for="Date" class="form-control" type="date" min="@DateTime.UtcNow.Date.ToString("yyyy-MM-dd")" max="@DateTime.UtcNow.Date.AddDays(7).ToString("yyyy-MM-dd")" value="@Model.Date" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Time">Time:</label>
+        <input asp-for="Time" class="form-control" />
+        <medium>Enter time and AM/PM</medium>
+        <span asp-validation-for="Time" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <button type="submit" asp-page-handler="Search" >Search</button>
+    </div>
+</form>
+
+
+@if (Model.ConfirmationNumber > 0)
+{
+<form method="post">
+    <div class="form-group">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td>Confirmation Number</td>
+                <td>Date</td>
+                <td>Time</td>
+                <td>Last Name</td>
+                <td>First Name</td>
+                <td>Home Phone</td>
+                <td>Alternate Phone</td>
+                <td>Number Of Players</td>
+                <td>Number Of Carts</td>
+                
+
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayFor(modelTeeTime => Model.ConfirmationNumber)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.Date)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.Time)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.LastName)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.FirstName)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.HomePhone)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.AlternatePhone)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.NumberOfPlayers)</td>
+                <td>@Html.DisplayFor(modelTeeTime => Model.AvailableTeeTime.NumberOfPlayers)</td>
+                
+
+
+
+
+            </tr>
+        </table>
+    </div>
+    <div class="form-group">
+        <label asp-for="NumberOfPlayers">Number Of Players:</label>
+        <input asp-for="NumberOfPlayers" value="@Model.AvailableTeeTime.NumberOfPlayers" class="form-control"
+               start="0" min="0" max="4" />
+        <span asp-validation-for="NumberOfPlayers" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NumberOfCarts">Number Of Carts:</label>
+        <input asp-for="NumberOfCarts" class="form-control" value="@Model.AvailableTeeTime.NumberOfCarts"
+               start="0" min="0" max="4" />
+        <span asp-validation-for="NumberOfPlayers" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CheckedIn">Checked In:</label>
+        <input asp-for="CheckedIn" class="form-control"
+               type="checkbox" />
+        <span asp-validation-for="CheckedIn" class="text-danger"></span>
+    </div>
+
+    <button type="submit" asp-page-handler="Update">Update Tee Time</button>
+    <button type="submit" asp-page-handler="Clear">Delete Tee Time</button>
+
+</form>
+}

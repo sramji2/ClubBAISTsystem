@@ -1,0 +1,160 @@
+﻿@page
+@model ClubBAISTsystem.Pages.RecordsMembershipApplicationModel
+@{
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<div class="alert alert-info">
+    @Model.Message
+</div>
+
+<h1>Membership Application</h1>
+
+<form method="post">
+    <p>Personal Information</p>
+    <div asp-validation-summary="ModelOnly" class="text-danger">
+    </div>
+    <div class="form-group">
+        <label asp-for="newMember.MembershipLevel">MembershipLevel:</label>
+        <select asp-for="newMember.MembershipLevel" asp-items="Model.Level" class="form-control">
+            <option value="">Select Membership Level</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="newMember.LastName">Last Name:</label>
+        <input asp-for="newMember.LastName" class="form-control" />
+        <span asp-validation-for="newMember.LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newMember.FirstName">First Name:</label>
+        <input asp-for="newMember.FirstName" class="form-control" />
+        <span asp-validation-for="newMember.FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newMember.HomeAddress">Home Address:</label>
+        <input asp-for="newMember.HomeAddress" class="form-control" />
+        <span asp-validation-for="newMember.HomeAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newMember.HomeCity">Home City:</label>
+        <input asp-for="newMember.HomeCity" class="form-control" />
+        <span asp-validation-for="newMember.HomeCity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newMember.HomeProvince">Home Province:</label>
+        <select asp-for="newMember.HomeProvince" asp-items="Model.HProvince" class="form-control">
+            <option value="">Select Home Province</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="newMember.HomePostalCode">Home PostalCode:</label>
+        <input asp-for="newMember.HomePostalCode" class="form-control" />
+        <span asp-validation-for="newMember.HomePostalCode" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newMember.HomePhone">Home Phone:</label>
+        <input asp-for="newMember.HomePhone" class="form-control" />
+        <span asp-validation-for="newMember.HomePhone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newMember.AlternatePhone">Alternative Phone:</label>
+        <input asp-for="newMember.AlternatePhone" class="form-control" />
+        <span asp-validation-for="newMember.AlternatePhone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newMember.Email">Email:</label>
+        <input asp-for="newMember.Email" class="form-control" />
+        <span asp-validation-for="newMember.Email" class="text-danger"></span>
+    </div>
+    <medium>Providing an Email address (above) will allow Club BAIST to send out a monthly statement via Email.</medium><br />
+    <br />
+    <div class="form-group">
+        <label asp-for="newMember.DateOfBirth">Date of Birth (Month/Day/Year):</label>
+        <input asp-for="newMember.DateOfBirth" class="form-control" type="date" />
+        <span asp-validation-for="newMember.DateOfBirth" class="text-danger"></span>
+    </div>
+    <p>Work Information</p>
+    <div class="form-group">
+        <label asp-for="newMember.Occupation">Occupation:</label>
+        <input asp-for="newMember.Occupation" class="form-control" />
+        <span asp-validation-for="newMember.Occupation" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newMember.CompanyName">Company Name:</label>
+        <input asp-for="newMember.CompanyName" class="form-control" />
+        <span asp-validation-for="newMember.CompanyName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newMember.CompanyAddress">Company Address:</label>
+        <input asp-for="newMember.CompanyAddress" class="form-control" />
+        <span asp-validation-for="newMember.CompanyAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newMember.CompanyCity">Company City:</label>
+        <input asp-for="newMember.CompanyCity" class="form-control" />
+        <span asp-validation-for="newMember.CompanyCity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newMember.CompanyProvince">Company Province:</label>
+        <select asp-for="newMember.CompanyProvince" asp-items="Model.CProvince" class="form-control">
+            <option value="">Select Company's Province</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="newMember.CompanyPhone">Company Phone:</label>
+        <input asp-for="newMember.CompanyPhone" class="form-control" />
+        <span asp-validation-for="newMember.CompanyPhone" class="text-danger"></span>
+    </div>
+    <p>
+        I hereby apply to become a Shareholder/Associate of Club BAIST. If elected I agree
+        to pay the annual dues and I also agree to become bound by the Memorandum and Articles of Association
+        of Club BAIST, and the rules, regulations and By-laws of the Directors of Club BAIST, and all
+        amendments thereto
+    </p>
+    <div class="form-group">
+        <label asp-for="newMember.Date">Date:</label>
+        <input asp-for="newMember.Date" class="form-control" type="date" min="@DateTime.UtcNow.Date.ToString("yyyy-MM-dd")" />
+        <span asp-validation-for="newMember.Date" class="text-danger"></span>
+    </div>
+    <hr style="height:2px;border-width:10px;color:gray;background-color:gray">
+    <p>
+        The above named applicant is personally known to me, and I believe him/her to be
+        suitable person to be elected as a member of Club BAIST.
+    </p>
+    <div class="form-group">
+        <label asp-for="newMember.ShareholderName1">Shareholder Name:</label>
+        <input asp-for="newMember.ShareholderName1" class="form-control" />
+        <span asp-validation-for="newMember.ShareholderName1" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="newMember.ShareholderName2">Shareholder Name:</label>
+        <input asp-for="newMember.ShareholderName2" class="form-control" />
+        <span asp-validation-for="newMember.ShareholderName2" class="text-danger"></span>
+    </div>
+
+    <hr style="height:2px;border-width:10px;color:gray;background-color:gray">
+    <style>
+        h5 {
+            text-align: center;
+        }
+    </style>
+    <h5>PRIVACY INFORMATION</h5>
+    <p>
+        The information you provide on this document is requested strictly to update our membership
+        data and the Membership Roster. This information will not be used for any other purpose except
+        with your written permission.
+    </p>
+    <div class="form-group">
+        <label asp-for="newMember.ApplicationStatus">Application Status:</label>
+        <input asp-for="newMember.ApplicationStatus" class="form-control" readonly />
+
+    </div>
+    <button type="submit" asp-page-handler="Submit">Submit Application</button>
+</form>
+
+

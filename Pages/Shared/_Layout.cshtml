@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Club BAIST Online System</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            
+
+                @{
+                    string Role = string.Empty;
+                    foreach (System.Security.Claims.Claim claim in User.Claims)
+                    {
+                        if (claim.Type == System.Security.Claims.ClaimTypes.Role)
+                        {
+                            Role = claim.Value;
+                        }
+
+                    }
+                    <div class="container">
+                        <img src="https://www.logolynx.com/images/logolynx/af/af5fc9a75879bceba042d7d4ff728acf.png" width="70" height="70" alt="Golf Logo" />
+                        <a class="navbar-brand" asp-area="" asp-page="/Welcome">Club BAIST</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+
+
+
+
+                            <ul class="navbar-nav flex-grow-1">
+                                @if (Role == "Member")
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/Welcome">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/BookTeeTime">Book Tee Time</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/ModifyTeeTime">Modify Tee Time</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/ViewsMemberAccount">View Member Account</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/RecordsPlayerScores">Record Player Scores</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/ViewPlayerHandicap">View Player Handicap</a>
+                                    </li>
+
+                                }
+                                @if (Role == "Shareholder")
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/MakesStandingTeeTimeRequest">Standing Tee Time Request</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/CancelsStandingTeeTimeRequest">Cancel Tee Time Request</a>
+                                    </li>
+
+                                }
+                                @if (Role == "Clerk")
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/BookTeeTime">Book Tee Time</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/ModifyTeeTime">Modify Tee Time</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/ViewPlayerHandicap">View Player Handicap</a>
+                                    </li>
+                                }
+                                @if (Role == "ProShop")
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/BookTeeTime">Book Tee Time</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/ModifyTeeTime">Modify Tee Time</a>
+                                    </li>
+
+                                }
+                                @if (Role == "MembershipCommittee")
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/RecordsMembershipApplication">Record Membership Application</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/ReviewsMembershipApplication">Review Membership Application</a>
+                                    </li>
+                                }
+                                @if (Role == "FinanceCommittee")
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/ViewsMemberAccount">View Member Account</a>
+                                    </li>
+                                }
+                                @if (Role == "RuleCommittee")
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/CancelsStandingTeeTimeRequest">Cancel Tee Time Request</a>
+                                    </li>
+                                }
+
+
+                            </ul>
+
+
+
+                        </div>
+                    </div>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Logout">Logout</a>
+
+                    }
+                    else
+                    {
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
+                        <a class="nav-link text-dark" asp-area="" asp-page="/EmployeeLogin">Employee Login</a>
+                        <a class="nav-link text-dark" asp-area="" asp-page="/RecordsMembershipApplication">Member Application</a>
+
+                    }
+                }
+        </nav>
+
+    </header>
+
+        <html>
+        <head>
+            <style>
+                ul {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    border: 1px solid #e7e7e7;
+                    background-color: #ccf2bf;
+                }
+
+                li {
+                    float: left;
+                }
+
+                    li a {
+                        display: block;
+                        color: #666;
+                        text-align: center;
+                        padding: 14px 16px;
+                        text-decoration: none;
+                    }
+
+                        li a:hover:not(.active) {
+                            background-color: #87ed7e;
+                        }
+
+                        li a.active {
+                            color: white;
+                            background-color: #04AA6D;
+                        }
+            </style>
+        </head>
+    </html>
+ 
+    
+
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+
+@*<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2022 - ClubBAISTsystem -Created by Shamir Ramji (sramji2) <a asp-area="" asp-page="/Privacy">Privacy</a>
+    </div>
+</footer>*@
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+

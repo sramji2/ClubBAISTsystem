@@ -1,0 +1,137 @@
+﻿@page
+@model ClubBAISTsystem.Pages.ViewsMemberAccountModel
+@{
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<div class="alert alert-info">
+    @Model.Message
+</div>
+
+<h1>View Member Account</h1>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger">
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">Email Address:</label>
+        <input asp-for="Email" class="form-control" />
+        <span id="MemberNumberError" class="text-danger" />
+    </div>
+    <button type="submit" asp-page-handler="Search">Search</button>
+    <table>
+        <tr>
+            <th>kev.smith@yahoo.com</th>
+
+        </tr>
+    </table>
+</form>
+
+@if (Model.Email != null)
+{
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td>MemberNumber</td>
+            <td>Membership Level</td>
+            <td>Last Name</td>
+            <td>First Name</td>
+            <td>Home Address</td>
+            <td>Home PostalCode</td>
+            <td>Home Phone</td>
+            <td>Alternate Phone</td>
+            <td>Email</td>
+            <td>Date Of Birth</td>
+            <td>Occupation</td>
+            <td>Company Name</td>
+            <td>Company Address</td>
+            <td>Company PostalCode</td>
+            <td>Company Phone</td>
+
+        </tr>
+
+        <tr>
+            <td>@Html.DisplayFor(modelMember => Model.MemberNumber)</td>
+            <td>@Html.DisplayFor(modelMember => Model.MembershipLevel)</td>
+            <td>@Html.DisplayFor(modelMember => Model.LastName)</td>
+            <td>@Html.DisplayFor(modelMember => Model.FirstName)</td>
+            <td>@Html.DisplayFor(modelMember => Model.HomeAddress)</td>
+            <td>@Html.DisplayFor(modelMember => Model.HomePostalCode)</td>
+            <td>@Html.DisplayFor(modelMember => Model.HomePhone)</td>
+            <td>@Html.DisplayFor(modelMember => Model.AlternatePhone)</td>
+            <td>@Html.DisplayFor(modelMember => Model.Email)</td>
+            <td>@Html.DisplayFor(modelMember => Model.DateOfBirth)</td>
+            <td>@Html.DisplayFor(modelMember => Model.Occupation)</td>
+            <td>@Html.DisplayFor(modelMember => Model.CompanyName)</td>
+            <td>@Html.DisplayFor(modelMember => Model.CompanyAddress)</td>
+            <td>@Html.DisplayFor(modelMember => Model.CompanyPostalCode)</td>
+            <td>@Html.DisplayFor(modelMember => Model.CompanyPhone)</td>
+
+        </tr>
+    </table>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td>Date Charged</td>
+            <td>Payment Description</td>
+            <td>Amount Paid</td>
+            <td>BalanceDue</td>
+            <td>BalanceOwing</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(modelMember => Model.DateCharged)</td>
+            <td>@Html.DisplayFor(modelMember => Model.PaymentDescription)</td>
+            <td>@Html.DisplayFor(modelMember => Model.AmountPaid)</td>
+            <td>@Html.DisplayFor(modelMember => Model.BalanceDue)</td>
+            <td>@Html.DisplayFor(modelMember => Model.BalanceOwing)</td>
+        </tr>
+
+    </table>
+    @*<h4>Process a Payment</h4>
+    <div class="form-group">
+        <div class="form-group">
+            <label asp-for="Date">Date:</label>
+            <input asp-for="Date" class="form-control" type="date" min="@DateTime.UtcNow.Date.ToString("yyyy-MM-dd")" value="@Model.Date" />
+            <span asp-validation-for="Date" class="text-danger"></span>
+        </div>
+        <label asp-for="LastName">Last Name:</label>
+        <input asp-for="LastName" value="@Model.LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FirstName">First Name:</label>
+        <input asp-for="FirstName" value="@Model.FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CreditCardNumber">Credit Card Number:</label>
+        <input asp-for="CreditCardNumber" value="@Model.CreditCardNumber" type="tel" placeholder="xxxx xxxx xxxx xxxx" class="form-control" />
+        <span asp-validation-for="CreditCardNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ExpiryDate">Expiry Date:</label>
+        <input asp-for="ExpiryDate" value="@Model.ExpiryDate" class="form-control" />
+        <span asp-validation-for="ExpiryDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Currency">Currency:</label>
+        <select asp-for="Currency" asp-items="Model.CurrencyType" class="form-control">
+            <option value="">Select Currency</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="PaymentDescription">Payment Description:</label>
+        <select asp-for="PaymentDescription" asp-items="Model.PaymentDesc" class="form-control">
+            <option value="">Select Payment Description</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="AmountPaid">Amount Paid:</label>
+        <input asp-for="AmountPaid" type="number" value="@Model.AmountPaid" class="form-control" />
+        <span asp-validation-for="AmountPaid" class="text-danger"></span>
+    </div>  
+   
+    <button type="submit" asp-page-handler="Submit">Process Payment</button>*@
+
+}

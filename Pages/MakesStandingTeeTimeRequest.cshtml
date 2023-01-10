@@ -1,0 +1,102 @@
+﻿@page
+@model ClubBAISTsystem.Pages.MakesStandingTeeTimeRequestModel
+@{
+}
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<h1>Makes Standing Tee Time Requests</h1>
+
+<div>
+    <b>@Model.Message</b>
+</div>
+
+<h3>Makes Standing Tee Time Requests</h3>
+<b> @Model.Message2</b>
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="newStandingTeeTime.RequestedStartDate">Requested Start Date:</label>
+        <input asp-for="newStandingTeeTime.RequestedStartDate"  type="date" min="@DateTime.UtcNow.Date.ToString("yyyy-MM-dd")" max="2022-09-30" value="@Model.RequestedStartDate" class="datepicker-input form-control" />
+        <span asp-validation-for="newStandingTeeTime.RequestedStartDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="newStandingTeeTime.RequestedEndDate">Requested End Date:</label>
+        <input asp-for="newStandingTeeTime.RequestedEndDate" type="date" min="@DateTime.UtcNow.Date.ToString("yyyy-MM-dd")" max="2022-09-30" value="@Model.RequestedEndDate" class="datepicker-input form-control" />
+        <span asp-validation-for="newStandingTeeTime.RequestedEndDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newStandingTeeTime.RequestedTeeTime">Requested Tee Time:</label>
+        <input asp-for="newStandingTeeTime.RequestedTeeTime" class="form-control" type="time" value="@Model.RequestedTeeTime" />
+        <span asp-validation-for="newStandingTeeTime.RequestedTeeTime" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newStandingTeeTime.MemberNumber">Member Number:</label>
+        <input asp-for="newStandingTeeTime.MemberNumber" class="form-control" value="@Model.MemberNumber" />
+        <span asp-validation-for="newStandingTeeTime.MemberNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newStandingTeeTime.MemberName">Member Name:</label>
+        <input asp-for="newStandingTeeTime.MemberName" class="form-control" value="@Model.MemberName" />
+        <span asp-validation-for="newStandingTeeTime.MemberName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newStandingTeeTime.MemberNumber2">Member Number 2:</label>
+        <input asp-for="newStandingTeeTime.MemberNumber2" class="form-control" value="@Model.MemberNumber2" />
+        <span asp-validation-for="newStandingTeeTime.MemberNumber2" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newStandingTeeTime.MemberName2">Member Name 2:</label>
+        <input asp-for="newStandingTeeTime.MemberName2" class="form-control" value="@Model.MemberName2" />
+        <span asp-validation-for="newStandingTeeTime.MemberName2" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newStandingTeeTime.MemberNumber3">Member Number 3:</label>
+        <input asp-for="newStandingTeeTime.MemberNumber3" class="form-control" value="@Model.MemberNumber3" />
+        <span asp-validation-for="newStandingTeeTime.MemberNumber3" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newStandingTeeTime.MemberName3">Member Name 3:</label>
+        <input asp-for="newStandingTeeTime.MemberName3" class="form-control" value="@Model.MemberName3" />
+        <span asp-validation-for="newStandingTeeTime.MemberName3" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newStandingTeeTime.MemberNumber4">Member Number 4:</label>
+        <input asp-for="newStandingTeeTime.MemberNumber4" class="form-control" value="@Model.MemberNumber4" />
+        <span asp-validation-for="newStandingTeeTime.MemberNumber4" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="newStandingTeeTime.MemberName4">Member Name 4:</label>
+        <input asp-for="newStandingTeeTime.MemberName4" class="form-control" value="@Model.MemberName4" />
+        <span asp-validation-for="newStandingTeeTime.MemberName4" class="text-danger"></span>
+    </div>
+
+    <button type="submit" asp-page-handler="Submit">Request</button>
+    <div>
+
+    </div>
+</form>
+
+
+<h5>Do not fill in area</h5>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="newStandingTeeTime.ApprovedTeeTime">Member Number:</label>
+        <input asp-for="newStandingTeeTime.ApprovedTeeTime" class="form-control" alue="@Model.ApprovedTeeTime" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="newStandingTeeTime.ApprovedBy">Member Number:</label>
+        <input asp-for="newStandingTeeTime.ApprovedBy" class="form-control" value="@Model.ApprovedBy" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="newStandingTeeTime.ApprovedDate">Member Number:</label>
+        <input asp-for="newStandingTeeTime.ApprovedDate" class="form-control" alue="@Model.ApprovedDate" readonly />
+    </div>
+    <button type="submit" asp-page-handler="Update" disabled>Approve</button>
+    <button type="submit" asp-page-handler="Cancel" disabled>Cancel</button>
+</form>

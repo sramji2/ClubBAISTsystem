@@ -1,0 +1,101 @@
+﻿@page
+@model ClubBAISTsystem.Pages.CancelsStandingTeeTimeRequestModel
+@{
+}
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<div class="alert alert-info">
+    @Model.Message
+</div>
+<h1>Cancel a Standing Tee Time Reservation</h1>
+<h5>Find Standing Tee Time Reservation</h5>
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RequestedStartDate">Requested Start Date:</label>
+        <input asp-for="RequestedStartDate" type="date" class="form-control" value="@Model.RequestedStartDate" />
+        <span asp-validation-for="RequestedStartDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RequestedTeeTime">Requested Tee Time:</label>
+        <input asp-for="RequestedTeeTime" type="time" class="form-control" value="@Model.RequestedTeeTime" />
+        <span asp-validation-for="RequestedTeeTime" class="text-danger"></span>
+    </div>
+    <button type="submit" asp-page-handler="Search">Search</button>
+</form>
+
+
+@if (Model.PriorityNumber > 0)
+{
+    <form method="post">
+        <div class="form-group">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <td>Priority Number</td>
+                    <td>MembershipLevel</td>
+                    <td>Requested Day Of Week</td>
+                    <td>Requested Start Date</td>
+                    <td>Requested End Date</td>
+                    <td>Requested Tee Time</td>
+                    <td>Member Number</td>
+                    <td>Member Name</td>
+                    <td>Member Number 2</td>
+                    <td>Member Name 2</td>
+                    <td>Member Number 3</td>
+                    <td>Member Name 3</td>
+                    <td>Member Number 4</td>
+                    <td>Member Name 4</td>
+                    <td>Approved Tee Time</td>
+                    <td>Approved By</td>
+                    <td>Approved Date</td>
+                </tr>
+
+                <tr>
+                    <td>@Html.DisplayFor(modelTeeTime => Model.PriorityNumber)</td>
+                    <td>@Html.DisplayFor(modelTeeTime => Model.MembershipLevel)</td>
+                    <td>@Html.DisplayFor(modelTeeTime => Model.RequestedDayOfWeek)</td>
+                    <td>@Html.DisplayFor(modelTeeTime => Model.RequestedStartDate)</td>
+                    <td>@Html.DisplayFor(modelTeeTime => Model.RequestedEndDate)</td>
+                    <td>@Html.DisplayFor(modelTeeTime => Model.RequestedTeeTime)</td>
+                    <td>@Html.DisplayFor(modelTeeTime => Model.MemberNumber)</td>
+                    <td>@Html.DisplayFor(modelTeeTime => Model.MemberName)</td>
+                    <td>@Html.DisplayFor(modelTeeTime => Model.MemberNumber2)</td>
+                    <td>@Html.DisplayFor(modelTeeTime => Model.MemberName2)</td>
+                    <td>@Html.DisplayFor(modelTeeTime => Model.MemberNumber3)</td>
+                    <td>@Html.DisplayFor(modelTeeTime => Model.MemberName3)</td>
+                    <td>@Html.DisplayFor(modelTeeTime => Model.MemberNumber4)</td>
+                    <td>@Html.DisplayFor(modelTeeTime => Model.MemberName4)</td>
+
+
+
+                </tr>
+            </table>
+        </div>
+        <button type="submit" asp-page-handler="Clear">Delete</button>
+    </form>
+
+}
+
+@*else if (Model.PriorityNumber > 0 || User.IsInRole("RuleCommittee"))
+{
+<form method="post">
+    <div class="form-group">
+        <label asp-for="RequestSTT.ApprovedTeeTime">Approved Tee Time:</label>
+        <input asp-for="RequestSTT.ApprovedTeeTime" class="form-control" alue="@Model.ApprovedTeeTime" />
+    </div>
+    <div class="form-group">
+        <label asp-for="RequestSTT.ApprovedBy">Approved By:</label>
+        <input asp-for="RequestSTT.ApprovedBy" class="form-control" value="@Model.ApprovedBy" />
+    </div>
+    <div class="form-group">
+        <label asp-for="RequestSTT.ApprovedDate">ApprovedDate:</label>
+        <input asp-for="RequestSTT.ApprovedDate" class="form-control" alue="@Model.ApprovedDate" />
+    </div>
+    <button type="submit" asp-page-handler="Update">Approve</button>
+
+</form>
+}*@

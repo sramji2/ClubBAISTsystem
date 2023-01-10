@@ -1,0 +1,119 @@
+﻿@page
+@model ClubBAISTsystem.Pages.ViewPlayerHandicapModel
+@{
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+
+
+<div class="alert alert-info">
+
+    @Model.Message
+</div>
+<h1>View Player Handicap</h1>
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger">
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">Email:</label>
+        <input asp-for="Email" class="form-control" value="@Model.Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    @*FindMember Method*@
+    <button type="submit" asp-page-handler="Search">Search</button>
+    <table>
+        <tr>
+            <th>Email &nbsp; &nbsp; &nbsp; &nbsp;</th>
+
+        </tr>
+        <tr>
+            <th>kev.smith@yahoo.com</th>
+
+        </tr>
+    </table>
+</form>
+
+@if (Model.Email != null)
+{
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Membership Level</th>
+            <th>Member Number</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+
+
+        </tr>
+        <tr>
+            <td>@Model.MembershipLevel</td>
+            <td>@Model.MemberNumber</td>
+            <td>@Model.LastName</td>
+            <td>@Model.FirstName</td>
+            <td>@Model.Email</td>
+            <td>@Model.Phone</td>
+
+        </tr>
+    </table>
+
+
+
+
+
+<h3>Club BAIST - Member Handicap Index</h3>
+
+<form name="TeeTimeSheet" method="post">
+    <div class="form-group">
+        <label for="handicapIndexDate">Date:</label>
+        <input type="date" class="form-control" id="handicapIndexDate" asp-for="HandicapIndexDate" value="2022-04-01"
+               required pattern="\d{4}-\d{2}-\d{2}" min="2022-04-01" max="2022-09-30">
+        <span asp-validation-for="HandicapIndexDate"></span>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th><b>Date</b></th>
+                <th><b>LastName</b></th>
+                <th><b>FirstName</b></th>
+                <th><b>HandicapIndex</b></th>
+                <th><b>Last 20 Average</b></th>
+                <th><b>Best 8 Average</b></th>
+                <th colspan="20"><b>Last 20 Round Scores</b></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @*@foreach (var singlePlayer in Model.PlayerScoreInformation)
+                {*@
+            <tr>
+                <td>@Model.activePlayer.ScoreDate</td>
+                <td>@Model.activePlayer.LastName</td>
+                <td>@Model.activePlayer.FirstName</td>
+
+                <td>@Model.activePlayer.PlayerScore.HandicapIndex</td>
+                <td>@Model.activePlayer.PlayerScore.Last20Average</td>
+                <td>@Model.activePlayer.PlayerScore.Best8Average</td>
+                <td>
+                    <table>
+                        <tr>
+                            @foreach (var score in Model.Last20Scores)
+                            {
+                                <td style="width: 20px; border: 1px solid black; padding: 2px; border-collapse: collapse;">@score</td>
+                            }
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            @*}*@
+
+        </tbody>
+
+    </table>
+    <button type="submit" asp-page-handler="Submit">Submit</button>
+</form>
+}

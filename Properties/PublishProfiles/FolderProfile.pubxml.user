@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\sramj\OneDrive\Desktop\BAIS 3230\ClubBAISTsystem\bin\Release\net5.0\publish\</_PublishTargetUrl>
+    <History>True|2022-04-22T16:22:49.5302763Z;True|2022-04-21T23:21:28.8824885-06:00;True|2022-04-20T13:14:02.6929652-06:00;True|2022-04-19T20:58:41.0697895-06:00;True|2022-04-18T22:09:57.2968568-06:00;True|2022-03-20T20:32:35.5653784-06:00;True|2022-03-20T20:29:13.9957644-06:00;True|2022-03-20T20:03:09.2475472-06:00;</History>
+  </PropertyGroup>
+</Project>
